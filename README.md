@@ -6,7 +6,7 @@ Customization for your environment is required.
 
 ## Step 1 - Customize Scripts to Your Environment
 
-Create a non-interactive BOSH login [login](https://discuss.pivotal.io/hc/en-us/articles/221695507-How-to-log-on-BOSH-in-non-interactive-scripts-Internal-Article-).
+Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/articles/221695507-How-to-log-on-BOSH-in-non-interactive-scripts-Internal-Article-).
 
 [BOSH docs](https://bosh.io/docs/director-users-uaa.html#client-login).
 
@@ -29,6 +29,7 @@ Create a non-interactive BOSH login [login](https://discuss.pivotal.io/hc/en-us/
 ### Modify the Start Script
 
 Edit [start-PCF.sh](start-PCF.sh):
+
 1. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
 1. Update the BOSH target uri
 1. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
@@ -36,6 +37,7 @@ Edit [start-PCF.sh](start-PCF.sh):
 ### Modify the Stop Script
 
 Edit [stop-PCF.sh](stop-PCF.sh):
+
 2. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
 2. Update the BOSH target uri
 2. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
