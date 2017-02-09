@@ -28,7 +28,7 @@ $ bosh deployments
 
 Edit [start-PCF.sh](start-PCF.sh):
 
-3. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
+3. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET` from `Step 1`)
 3. Update the BOSH target uri
 3. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
 
@@ -36,7 +36,7 @@ Edit [start-PCF.sh](start-PCF.sh):
 
 Edit [stop-PCF.sh](stop-PCF.sh):
 
-4. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
+4. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET` from `Step 1`)
 4. Update the BOSH target uri
 4. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
 
