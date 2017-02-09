@@ -4,6 +4,15 @@ This project helps with the automated start and stop of PCF.
 
 Customization for your environment is required.
 
+***NOTE:*** Before stoping the Elastic Runtime the following jobs should be scaled down to 1 instance.  If needed these jobs can be scaled up after starting the Elastic Runtime:
+
+Job | PCF version
+------------ | -------------
+`etcd_tls_server` | `1.9`, `1.10`
+`consul_server` | `1.9`, `1.10`
+`mysql` | `1.9`, `1.10`
+`diego_database` | `1.9`
+
 ## Step 1 - Create a Non-interactive BOSH Login
 
 1. [`ssh` to the Ops Mgr VM](http://docs.pivotal.io/pivotalcf/1-9/customizing/trouble-advanced.html)
