@@ -6,17 +6,15 @@ Customization for your environment is required.
 
 ## Step 1 - Customize Scripts to Your Environment
 
-Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/articles/221695507-How-to-log-on-BOSH-in-non-interactive-scripts-Internal-Article-).
-
-[BOSH docs](https://bosh.io/docs/director-users-uaa.html#client-login).
+1. [`ssh` to the Ops Mgr VM](http://docs.pivotal.io/pivotalcf/1-9/customizing/trouble-advanced.html)
+1. Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/articles/221695507-How-to-log-on-BOSH-in-non-interactive-scripts-Internal-Article-)  (supplementary [BOSH docs](https://bosh.io/docs/director-users-uaa.html#client-login))
 
 ## Step 2 - Confirm What Deployments Are Running
 
-3. [`ssh` to the Ops Mgr VM](http://docs.pivotal.io/pivotalcf/1-9/customizing/trouble-advanced.html)
-3. Find the deployment name
+Find the deployment name:
 
-`$ bosh deployments`
 ```
+$ bosh deployments
 +-------------------------+---------------------------------+-----------------------------------------------+--------------+
 | Name                    | Release(s)                      | Stemcell(s)                                   | Cloud Config |
 +-------------------------+---------------------------------+-----------------------------------------------+--------------+
@@ -30,17 +28,17 @@ Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/artic
 
 Edit [start-PCF.sh](start-PCF.sh):
 
-1. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
-1. Update the BOSH target uri
-1. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
+3. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
+3. Update the BOSH target uri
+3. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
 
 ### Modify the Stop Script
 
 Edit [stop-PCF.sh](stop-PCF.sh):
 
-2. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
-2. Update the BOSH target uri
-2. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
+4. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET`)
+4. Update the BOSH target uri
+4. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
 
 ## Step 4 - Upload Scripts to Ops Mgr VM
 
@@ -83,10 +81,15 @@ Date/Time is based on UTC.
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
 
-
 #every business day at 7AM CT start
 0       13      *       *      1-5       /home/ubuntu/start-PCF.sh >> /home/ubuntu/pcf-start-stop.log 2>&1
 
 #every business day at 7PM CT stop
 0       1      *       *       1-6       /home/ubuntu/stop-PCF.sh >> /home/ubuntu/pcf-start-stop.log 2>&1
+```
+
+## Step 6 - Review the Log Output
+
+```
+$ cat pcf-start-stop.log
 ```
