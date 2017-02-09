@@ -13,7 +13,7 @@ Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/artic
 ## Step 2 - Confirm What Deployments Are Running
 
 3. [`ssh` to the Ops Mgr VM](http://docs.pivotal.io/pivotalcf/1-9/customizing/trouble-advanced.html)
-3. Find deployment name
+3. Find the deployment name
 
 `$ bosh deployments`
 ```
@@ -44,12 +44,14 @@ Edit [stop-PCF.sh](stop-PCF.sh):
 
 ## Step 4 - Upload Scripts to Ops Mgr VM
 
-Use `scp`.
+Use `scp` to upload the scripts to the Ops Mgr.
 
 
 ## Step 5 - Schedule Starting and Stoping of PCF
 
 ### Sample `crontab` setup
+
+Setup up a `crontab` entries to automate start and stop of the deployment.
 
 ***Don't forget to set the PATH***
 ```
