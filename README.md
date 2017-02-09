@@ -49,12 +49,14 @@ Use `scp` to upload the scripts to the Ops Mgr.
 
 ### Sample `crontab` setup
 
-Setup up `crontab` entries to automate start and stop of the deployment.
+Setup up `crontab` entries on the Ops Mgr to automate start and stop of the deployment.
 
 Date/Time is based on UTC.
 
 ***Don't forget to set the PATH***
 ```
+$ env EDITOR=nano crontab -e
+
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
