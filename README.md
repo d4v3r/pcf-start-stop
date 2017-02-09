@@ -11,7 +11,7 @@ Customization for your environment is required.
 
 ## Step 2 - Confirm What Deployments Are Running
 
-Find the deployment name:
+Find the deployment name and make note of it:
 
 ```
 $ bosh deployments
