@@ -51,7 +51,9 @@ Use `scp` to upload the scripts to the Ops Mgr.
 
 ### Sample `crontab` setup
 
-Setup up a `crontab` entries to automate start and stop of the deployment.
+Setup up `crontab` entries to automate start and stop of the deployment.
+
+Date/Time is based on UTC.
 
 ***Don't forget to set the PATH***
 ```
