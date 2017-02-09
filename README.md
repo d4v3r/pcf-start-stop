@@ -4,7 +4,7 @@ This project helps with the automated start and stop of PCF.
 
 Customization for your environment is required.
 
-## Step 1 - Customize Scripts to Your Environment
+## Step 1 - Create a Non-interactive BOSH Login
 
 1. [`ssh` to the Ops Mgr VM](http://docs.pivotal.io/pivotalcf/1-9/customizing/trouble-advanced.html)
 1. Create a [non-interactive BOSH  login](https://discuss.pivotal.io/hc/en-us/articles/221695507-How-to-log-on-BOSH-in-non-interactive-scripts-Internal-Article-)  (supplementary [BOSH docs](https://bosh.io/docs/director-users-uaa.html#client-login))
