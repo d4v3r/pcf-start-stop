@@ -37,7 +37,7 @@ Edit [pcf-start-stop.sh](./pcf-start-stop.sh):
 
 3. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET` from `Step 1`)
 3. Update `BOSH_TARGET_URI`
-3. Update `BOSH_DEPLOYMENT_NAME` (make sure to use the deployment file name from `Step 2`)
+3. Update `BOSH_DEPLOYMENT_NAME` (make sure to use the deployment name from `Step 2`)
 
 ## Step 4 - Upload Scripts to Ops Mgr VM
 
