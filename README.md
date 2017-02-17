@@ -41,7 +41,7 @@ Edit [pcf-start-stop.sh](./pcf-start-stop.sh):
 
 ## Step 4 - Upload Scripts to Ops Mgr VM
 
-Use `scp` to upload the scripts to the Ops Mgr.
+Use `scp` to upload the script to the Ops Mgr.
 
 ## Step 5 - Schedule Starting and Stoping of PCF
 
