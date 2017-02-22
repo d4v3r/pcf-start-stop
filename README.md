@@ -31,28 +31,17 @@ $ bosh deployments
 |                         | capi/1.11.8                     |                                               |              |
 
 ```
-## Step 3 - Customize Start/Stop Scripts
+## Step 3 - Customize Start/Stop Script
 
-### Modify the Start Script
-
-Edit [start-PCF.sh](start-PCF.sh):
+Edit [pcf-start-stop.sh](./pcf-start-stop.sh):
 
 3. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET` from `Step 1`)
-3. Update the BOSH target uri
-3. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
-
-### Modify the Stop Script
-
-Edit [stop-PCF.sh](stop-PCF.sh):
-
-4. Update the BOSH client credentials (`BOSH_CLIENT` & `BOSH_CLIENT_SECRET` from `Step 1`)
-4. Update the BOSH target uri
-4. Update the BOSH deployent (make sure to use the deployment file name from `Step 2`)
+3. Update `BOSH_TARGET_URI`
+3. Update `BOSH_DEPLOYMENT_NAME` (make sure to use the deployment name from `Step 2`)
 
 ## Step 4 - Upload Scripts to Ops Mgr VM
 
-Use `scp` to upload the scripts to the Ops Mgr.
-
+Use `scp` to upload the script to the Ops Mgr.
 
 ## Step 5 - Schedule Starting and Stoping of PCF
 
@@ -91,12 +80,11 @@ $ env EDITOR=nano crontab -e
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
-
 #every business day at 7AM CT start
-0       13      *       *      1-5       /home/ubuntu/start-PCF.sh >> /home/ubuntu/pcf-start-stop.log 2>&1
+0       13      *       *      1-5       /home/ubuntu/pcf-start-stop.sh start >> /home/ubuntu/pcf-start-stop.log 2>&1
 
 #every business day at 7PM CT stop
-0       1      *       *       1-6       /home/ubuntu/stop-PCF.sh >> /home/ubuntu/pcf-start-stop.log 2>&1
+0       1      *       *       1-6       /home/ubuntu/pcf-start-stop.sh stop >> /home/ubuntu/pcf-start-stop.log 2>&1
 ```
 
 ## Step 6 - Review the Log Output
@@ -104,3 +92,4 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/us
 ```
 $ cat pcf-start-stop.log
 ```
+
